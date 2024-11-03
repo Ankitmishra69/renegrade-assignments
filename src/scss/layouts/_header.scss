@@ -1,0 +1,32 @@
+header {
+  background: $bg-color;
+}
+
+.header {
+  &_wrap {
+    @include flex-aligncenter;
+    justify-content: space-between;
+  }
+}
+
+.btn-book {
+  &-text {
+    display: block;
+    font-size: 10px;
+    line-height: 1.2;
+    @extend %semi-bold;
+  }
+
+  .phone {
+    display: block;
+    font-size: 14px;
+    line-height: 1.2;
+    @extend %regular;
+  }
+  &__content{
+    display: none;
+    @include tablet{
+      display: block;
+    }
+  }
+}

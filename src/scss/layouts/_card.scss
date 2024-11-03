@@ -1,0 +1,54 @@
+.card {
+  background: rgba($secondary-color-rgb, 0.25);
+  cursor: pointer;
+  padding: 48px 36px;
+  @extend %relative;
+  @include flex-aligncenter;
+  flex-direction: column;
+
+  &__img {
+    height: 293px;
+    margin: 0;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  a {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover {
+    a {
+      opacity: 1;
+    }
+  }
+
+  &-title {
+    margin-bottom: 48px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.2;
+    @extend %semi-bold
+  }
+
+  &-number {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 60px;
+    line-height: 1.2;
+    @extend %bold
+  }
+
+  &-desc{
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.2;
+    @extend %regular;
+    margin-bottom: 48px;
+  }
+}

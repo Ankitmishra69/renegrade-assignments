@@ -1,0 +1,62 @@
+.about {
+  padding: 54px 0;
+  @include tablet{
+    padding: 100px 0;
+  }
+
+  &__wrapper {
+    @include flex-aligncenter;
+    flex-direction: column;
+    gap: 20px;
+    @include tablet {
+      flex-direction: row;
+      gap: 60px;
+    }
+    @include desktop {
+      gap: 130px;
+    }
+  }
+
+  &__left {
+    width: 100%;
+    @include tablet {
+      width: calc((100% - 130px) / 2);
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.4;
+      @extend %regular;
+      margin-bottom: 0;
+      @include tablet {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__right {
+    width: 100%;
+    @include tablet {
+      width: calc((100% - 130px) / 2);
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 1.4;
+      @extend %regular;
+      @include tablet {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+    }
+
+    a {
+      @extend %semi-bold;
+      text-decoration: underline;
+      font-size: 12px;
+      @include tablet {
+        font-size: 18px;
+      }
+    }
+  }
+}

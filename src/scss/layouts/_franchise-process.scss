@@ -1,0 +1,39 @@
+.franchise-process {
+  padding: 55px 0;
+  @include tablet{
+    padding: 60px 0;
+  }
+  @include desktop{
+    padding: 100px 0;
+  }
+
+  &__wrapper {
+    margin-top: 54px;
+    @include flex-aligncenter;
+    gap: 12px;
+    padding: 0;
+    @include tablet {
+      padding: 0 9%;
+    }
+  }
+  .section-title{
+    padding: 0 5%;
+    @include tablet{
+      padding: 0 9%;
+    }
+  }
+}
+
+
+
+.owl-carousel .owl-stage-outer {
+  overflow: visible;
+}
+
+.franchise-process__wrapper .card {
+  transition: transform 0.3s ease;
+}
+
+.franchise-process__wrapper .owl-center .card {
+  transform: scale(1.05); /* Slightly enlarge the active card */
+}

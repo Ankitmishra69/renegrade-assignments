@@ -1,0 +1,95 @@
+.cta{
+  background: var(--primary-color);
+  color: $white-color;
+  padding: 50px 0;
+  border-bottom: 30px solid var(--secondary-color);
+  @include tablet{
+    padding: 110px 0;
+  }
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 34px;
+    @include tablet{
+      gap: 120px;
+      flex-direction: row;
+    }
+  }
+  &-button{
+    width: max-content;
+    margin-top: 0px;
+    @include tablet{
+      margin-top: 40px;
+    }
+  }
+  &__content{
+    h2{
+      color: $white-color;
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      @include tablet{
+        font-size: 42px;
+      }
+
+    }
+    p{
+      font-size: 14px;
+      line-height: 1.6;
+      display: block;
+      @include tablet{
+        display: none;
+      }
+      a{
+        color: var(--secondary-color);
+        transition: 0.3s all ease-in-out;
+      }
+    }
+  }
+}
+
+
+.seperator{
+  background: var(--primary-color);
+  color: $white-color;
+  padding: 50px 0;
+  @include tablet{
+    padding: 110px 0;
+  }
+  &__wrapper{
+    align-content: center;
+    h2{
+      color: $white-color;
+      text-align: center;
+      padding-bottom: 20px;
+      line-height: 1.2;
+      font-size: 28px;
+      margin-bottom: 0;
+      @extend %bold;
+      @include tablet{
+        margin-bottom: 20px;
+        font-size: 48px;
+      }
+    }
+    p{
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+      @extend %regular;
+      @include tablet{
+        font-size: 20px;
+        line-height: 1.2;
+      }
+      a{
+        color: var(--secondary-color);
+        text-decoration: underline;
+        transition: 0.3s all ease-in-out;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

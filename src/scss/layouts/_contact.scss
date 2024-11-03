@@ -1,0 +1,65 @@
+.contact {
+  padding-bottom: 50px;
+  padding-top: 0;
+  @include tablet{
+    padding-top: 84px;
+    padding-bottom: 0;
+  }
+  &__wrapper {
+    @include flex-aligncenter;
+    flex-direction: column-reverse;
+    gap: 38px;
+    @include tablet{
+      gap: 60px;
+    }
+    @include desktop{
+      padding-left: 9%;
+      flex-direction: row;
+    }
+  }
+
+  &__left {
+    width: 100%;
+    padding: 0 5%;
+    @include desktop{
+      width: calc((100% - 60px) / 2);
+      padding: 0;
+    }
+    .section-title{
+      margin-bottom: 31px;
+      @include tablet{
+        margin-bottom: 44px;
+      }
+    }
+  }
+
+  &__right {
+    width: 100%;
+    @include desktop{
+      width: calc((100% - 60px) / 2);
+    }
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      clip-path: unset;
+      @include tablet {
+        clip-path: polygon(27% 0px, 100% 0px, 100% 100%, 0% 100%);
+      }
+    }
+  }
+
+  button[type='submit'] {
+    margin-top: 30px;
+  }
+
+  &__desc {
+    color: #8E8E8E;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+    @include tablet{
+      font-size: 14px;
+    }
+  }
+}
