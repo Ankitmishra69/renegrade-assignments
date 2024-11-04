@@ -27,16 +27,20 @@ get_header();
                         $row_layout = get_row_layout();
 
 
-                        echo get_template_part('acf-templates/'.$row_layout);
+                        if ( $row_layout ) {
+                            echo get_template_part( 'acf-templates/' . $row_layout );
+                        }
                         // End loop.
 //					echo $row_layout;
                     endwhile;
                 endif;
+                get_template_part('footer'); // This will include footer.php
             endwhile;
             ?>
 
-    </main><!-- #main -->
+    </main>
 
 <?php
-//get_sidebar();
 get_footer();
+?>
+</div>

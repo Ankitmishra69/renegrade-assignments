@@ -25,4 +25,4 @@ $link = get_sub_field('link');
         </div>
     </div>
 </div>
-<!--        seperator section ends
+<!--        seperator section ends-->

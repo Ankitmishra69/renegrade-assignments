@@ -6,6 +6,7 @@ import '../scss/style.scss';
             if (typeof jQuery !== 'undefined' && typeof jQuery.fn.owlCarousel !== 'undefined') {
                 jQuery('.franchise-process__wrapper').owlCarousel({
                     loop: true,
+                    dots: false,
                     margin: 12,
                     responsive: {
                         0: {

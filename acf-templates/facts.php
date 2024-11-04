@@ -40,6 +40,5 @@ $section_title = get_sub_field('section_title');
             <p>No facts repeater</p>
         <?php endif; ?>
     </div>
-    </div>
 </div>
 <!--        facts section ends-->

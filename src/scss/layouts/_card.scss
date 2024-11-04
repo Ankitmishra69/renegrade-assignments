@@ -5,6 +5,8 @@
   @extend %relative;
   @include flex-aligncenter;
   flex-direction: column;
+  height: 460px;
+  justify-content: space-between;
 
   &__img {
     height: 293px;

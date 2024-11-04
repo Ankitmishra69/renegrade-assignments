@@ -12,7 +12,7 @@
     gap: 40px;
     @include tablet{
       flex-direction: row;
-      padding-left: 9%;
+      padding-left: 13%;
     }
   }
 
@@ -22,6 +22,7 @@
     @include tablet{
       font-size: 32px;
       line-height: 1.2;
+      font-weight: 800;
     }
     @include desktop{
       font-size: 3.75rem;

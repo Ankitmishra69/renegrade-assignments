@@ -206,6 +206,12 @@ button {
   &:focus {
     outline: none !important;
   }
+
+  button{
+    &:after, &:before{
+      display: none!important;
+    }
+  }
 //anchor
 }
 a {
@@ -331,7 +337,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid $black-color;
+  border: none;
   @include border-radius(0);
   background: transparent;
   color: $black-color;

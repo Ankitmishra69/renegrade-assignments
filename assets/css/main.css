@@ -1,7 +1,7 @@
 /*!******************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/scss/style.scss ***!
   \******************************************************************************************************************************************/
-@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap);
 /*!**********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/scss/style.scss (1) ***!
   \**********************************************************************************************************************************************/
@@ -11,8 +11,8 @@
   --primary-rgb: rgb(35, 42, 64);
   --secondary-color: #F6C5DA;
   --secondary-rgb: rgb(246, 197, 218);
-  --primary-font: Poppins, sans-serif;
-  --secondary-font: Poppins, sans-serif;
+  --primary-font: Mulish, sans-serif;
+  --secondary-font: Mulish, sans-serif;
 }
 
 .display-flex {
@@ -596,6 +596,17 @@ input[type=submit]:focus, .reply a:focus,
 button:focus {
   outline: none !important;
 }
+.btn button:after,
+input[type=button] button:after,
+input[type=reset] button:after,
+input[type=submit] button:after, .reply a button:after, .btn button:before,
+input[type=button] button:before,
+input[type=reset] button:before,
+input[type=submit] button:before, .reply a button:before,
+button button:after,
+button button:before {
+  display: none !important;
+}
 
 a:focus {
   text-decoration: none;
@@ -726,7 +737,7 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  border: 1px solid #000000;
+  border: none;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -1259,7 +1270,7 @@ a:hover {
 @media screen and (min-width: 1600px) {
   .container,
   .container-fluid {
-    max-width: 1620px;
+    max-width: 1440px;
   }
 }
 
@@ -1627,6 +1638,18 @@ input[type=submit], .reply a {
   background: var(--primary-color);
   border-color: unset;
 }
+.btn-primary:after, button:after,
+input[type=button]:after,
+input[type=reset]:after,
+input[type=submit]:after, .reply a:after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width=%2719%27 height=%2711%27 viewBox=%270 0 19 11%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M13 9L16.5 5.5M16.5 5.5L13 2M16.5 5.5H2%27 stroke=%27white%27 stroke-miterlimit=%2710%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  height: 10px;
+  width: 20px;
+  display: inline-block;
+  margin-left: 12px;
+}
 .btn-primary:hover, button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
@@ -1646,18 +1669,6 @@ input[type=button]:focus:after,
 input[type=reset]:focus:after,
 input[type=submit]:focus:after, .reply a:focus:after {
   background-image: url("data:image/svg+xml,%3Csvg width=%2719%27 height=%2711%27 viewBox=%270 0 19 11%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M13 9L16.5 5.5M16.5 5.5L13 2M16.5 5.5H2%27 stroke=%27%23232A40%27 stroke-miterlimit=%2710%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E%0A");
-}
-.btn-primary:after, button:after,
-input[type=button]:after,
-input[type=reset]:after,
-input[type=submit]:after, .reply a:after {
-  content: "";
-  background-image: url("data:image/svg+xml,%3Csvg width=%2719%27 height=%2711%27 viewBox=%270 0 19 11%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M13 9L16.5 5.5M16.5 5.5L13 2M16.5 5.5H2%27 stroke=%27white%27 stroke-miterlimit=%2710%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
-  height: 10px;
-  width: 20px;
-  display: inline-block;
-  margin-left: 12px;
 }
 .btn-sm, .reply a {
   padding: 9px 30px;
@@ -1764,6 +1775,39 @@ input[type=submit] {
 }
 .btn-text:hover span svg path {
   fill: var(--secondary-color);
+}
+
+.owl-dots {
+  position: absolute;
+  bottom: 38px;
+  right: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 999999;
+}
+@media screen and (min-width: 767px), print {
+  .owl-dots {
+    right: 100px;
+  }
+}
+.owl-dots .owl-dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 1000px;
+  background-color: var(--primary-color) !important;
+  opacity: 0.25;
+  z-index: 99999;
+}
+.owl-dots .owl-dot.active {
+  opacity: 1;
+}
+.owl-dots button[role=button]:after {
+  display: none !important;
 }
 
 .section-title {
@@ -2633,7 +2677,7 @@ input[type=checkbox] {
 @media screen and (min-width: 767px), print {
   .hero__wrapper {
     flex-direction: row;
-    padding-left: 9%;
+    padding-left: 13%;
   }
 }
 .hero__title {
@@ -2644,6 +2688,7 @@ input[type=checkbox] {
   .hero__title {
     font-size: 32px;
     line-height: 1.2;
+    font-weight: 800;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -2702,6 +2747,8 @@ input[type=checkbox] {
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: 460px;
+  justify-content: space-between;
 }
 .card__img {
   height: 293px;
@@ -3016,6 +3063,7 @@ input[type=checkbox] {
 
 header {
   background: #F5F5F5;
+  padding: 16px 0;
 }
 
 .header_wrap {
@@ -3026,6 +3074,15 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.header .site-branding {
+  height: max-content;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
 }
 
 .btn-book-text {
@@ -3045,6 +3102,70 @@ header {
   .btn-book__content {
     display: block;
   }
+}
+
+@media screen and (min-width: 767px), print {
+  .nav__wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 116px;
+  }
+}
+
+#primary-menu {
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.menu-item:hover .sub-menu {
+  display: block !important;
+}
+.menu-item a {
+  padding: 12px 24px;
+  display: inline-block;
+}
+.menu-item-has-children {
+  position: relative;
+}
+.menu-item-has-children:after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width=%2712%27 height=%277%27 viewBox=%270 0 12 7%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M2 2L6 6L10 2%27 stroke=%27%23232A40%27 stroke-width=%271.5%27 stroke-linecap=%27square%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E%0A");
+  height: 8px;
+  width: 20px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.menu-item .sub-menu {
+  display: none;
+  position: absolute;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.04);
+  top: 48px;
+  left: 0;
+  width: max-content;
+  padding: 0 12px;
+  z-index: 9999;
+  background: #F5F5F5;
+}
+.menu-item .sub-menu li {
+  border-bottom: 1px solid #eee;
+}
+.menu-item .sub-menu li:last-child {
+  border-bottom: none;
+}
+.menu-item .sub-menu a {
+  width: 100%;
 }
 
 .about {
@@ -3139,7 +3260,7 @@ header {
 }
 @media screen and (min-width: 767px), print {
   .testimonial-item {
-    padding: 0 0 0 9%;
+    padding: 0 0 0 13%;
     flex-direction: row;
   }
 }
@@ -3229,7 +3350,7 @@ header {
 }
 @media screen and (min-width: 767px), print {
   .franchise-process__wrapper {
-    padding: 0 9%;
+    padding: 0 13%;
   }
 }
 .franchise-process .section-title {
@@ -3237,7 +3358,7 @@ header {
 }
 @media screen and (min-width: 767px), print {
   .franchise-process .section-title {
-    padding: 0 9%;
+    padding: 0 13%;
   }
 }
 
@@ -3258,12 +3379,12 @@ header {
 }
 @media screen and (min-width: 767px), print {
   .facts {
-    padding: 0 9%;
+    padding: 0 13%;
   }
 }
 @media screen and (min-width: 1024px) {
   .facts {
-    padding: 40px 9% 100px 9%;
+    padding: 40px 13% 100px 13%;
   }
 }
 .facts__wrapper {
@@ -3395,7 +3516,7 @@ header {
 }
 @media screen and (min-width: 1024px) {
   .contact__wrapper {
-    padding-left: 9%;
+    padding-left: 13%;
     flex-direction: row;
   }
 }

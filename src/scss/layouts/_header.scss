@@ -1,11 +1,16 @@
 header {
   background: $bg-color;
+  padding: 16px 0;
 }
 
 .header {
   &_wrap {
     @include flex-aligncenter;
     justify-content: space-between;
+  }
+  .site-branding{
+    height: max-content;
+    @include flex-aligncenter;
   }
 }
 
