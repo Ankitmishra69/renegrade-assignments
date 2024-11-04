@@ -137,14 +137,18 @@ add_action( 'widgets_init', 'renegrade_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
 function renegrade_scripts() {
+    // Enqueue jQuery if not already included (WordPress includes it by default)
+    // wp_enqueue_script('jquery'); // Uncomment if needed
+
     // Enqueue main stylesheet
     wp_enqueue_style(
         'renegrade-style', // Handle
-        get_stylesheet_directory_uri() . '/assets/css/main.css', // Path to the CSS file
-        array(), // Dependencies
-        '1.0', // Version
-        'all' // Media
+        get_stylesheet_directory_uri() . '/assets/css/main.css',
+        array(),
+        '1.0',
+        'all'
     );
 
     // Add RTL support
@@ -152,20 +156,37 @@ function renegrade_scripts() {
 
     // Enqueue navigation script
     wp_enqueue_script(
-        'renegrade-navigation', // Handle
+        'renegrade-navigation',
         get_template_directory_uri() . '/js/navigation.js', // Path to the JS file
-        array(), // No dependencies
-        '1.0', // Version
-        true // Load in footer
+        array(),
+        '1.0',
+        true
     );
 
     // Enqueue main script
     wp_enqueue_script(
-        'renegrade-script', // Handle
+        'renegrade-script',
         get_template_directory_uri() . '/assets/js/main.js', // Path to the JS file
-        array('jquery'), // Dependencies
-        '1.0', // Version
-        true // Load in footer
+        array('jquery'),
+        '1.0',
+        true
+    );
+
+    // Enqueue Owl Carousel CSS
+    wp_enqueue_style(
+        'owl-carousel-style',
+        get_template_directory_uri() . '/assets/css/owl.carousel.min.css', // Path to the CSS file
+        array(),
+        '1.0'
+    );
+
+    // Enqueue Owl Carousel script
+    wp_enqueue_script(
+        'owl-carousel-script',
+        get_template_directory_uri() . '/assets/js/owl.carousel.min.js', // Path to the JS file
+        array('jquery'),
+        '1.0',
+        true
     );
 
     // Enqueue comment reply script on singular pages with open comments
@@ -201,4 +222,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

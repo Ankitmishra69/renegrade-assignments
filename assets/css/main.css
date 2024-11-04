@@ -2611,8 +2611,13 @@ input[type=checkbox] {
 }
 
 .hero {
-  padding-top: 60px;
+  padding-top: 40px;
   background: #F5F5F5;
+}
+@media screen and (min-width: 767px), print {
+  .hero {
+    padding-top: 60px;
+  }
 }
 .hero__wrapper {
   display: -webkit-box;
@@ -3262,24 +3267,17 @@ header {
   }
 }
 .facts__wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
   gap: 20px;
   margin-top: 35px;
 }
 @media screen and (min-width: 1024px) {
   .facts__wrapper {
-    flex-direction: row;
-    margin-top: 60px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
   }
 }
 .facts-card {
-  margin-top: 20px;
   background: #F5F5F5;
   padding: 34px;
 }
@@ -3288,24 +3286,12 @@ header {
     padding-left: 46px;
   }
 }
-.facts-card:first-child {
-  margin-top: 0;
+.facts-card:nth-child(2) {
+  grid-column: 1/2;
 }
-.facts__left {
-  width: 100%;
-}
-@media screen and (min-width: 1024px) {
-  .facts__left {
-    width: calc((100% - 20px) / 2);
-  }
-}
-.facts__right {
-  width: 100%;
-}
-@media screen and (min-width: 1024px) {
-  .facts__right {
-    width: calc((100% - 20px) / 2);
-  }
+.facts-card:nth-child(3) {
+  grid-column: 2/3;
+  grid-row: 1/3;
 }
 .facts-item {
   padding: 8px 0;

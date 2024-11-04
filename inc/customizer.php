@@ -31,6 +31,79 @@ function renegrade_customize_register( $wp_customize ) {
 			)
 		);
 	}
+    // Add a section for the button customization
+    $wp_customize->add_section(
+        'renegrade_button_section',
+        array(
+            'title'       => __( 'Header Button', 'renegrade' ),
+            'priority'    => 30,
+            'description' => __( 'Customize the header button text and phone number', 'renegrade' ),
+        )
+    );
+
+    // Button text setting
+    $wp_customize->add_setting(
+        'renegrade_button_text',
+        array(
+            'default'           => __( 'Book a consultation', 'renegrade' ),
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'postMessage', // Enables live preview with selective refresh
+        )
+    );
+
+    // Button text control
+    $wp_customize->add_control(
+        'renegrade_button_text_control',
+        array(
+            'label'    => __( 'Button Text', 'renegrade' ),
+            'section'  => 'renegrade_button_section',
+            'settings' => 'renegrade_button_text',
+            'type'     => 'text',
+        )
+    );
+
+    // Phone number setting
+    $wp_customize->add_setting(
+        'renegrade_button_phone',
+        array(
+            'default'           => __( '+1 707-233-933', 'renegrade' ),
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'postMessage', // Enables live preview with selective refresh
+        )
+    );
+
+    // Phone number control
+    $wp_customize->add_control(
+        'renegrade_button_phone_control',
+        array(
+            'label'    => __( 'Phone Number', 'renegrade' ),
+            'section'  => 'renegrade_button_section',
+            'settings' => 'renegrade_button_phone',
+            'type'     => 'text',
+        )
+    );
+
+    // Enable selective refresh for button text and phone number
+    if ( isset( $wp_customize->selective_refresh ) ) {
+        $wp_customize->selective_refresh->add_partial(
+            'renegrade_button_text',
+            array(
+                'selector'        => '.btn-book-text', // CSS class in header.php
+                'render_callback' => function() {
+                    return get_theme_mod( 'renegrade_button_text', 'Book a consultation' );
+                },
+            )
+        );
+        $wp_customize->selective_refresh->add_partial(
+            'renegrade_button_phone',
+            array(
+                'selector'        => '.phone', // CSS class in header.php
+                'render_callback' => function() {
+                    return get_theme_mod( 'renegrade_button_phone', '+1 707-233-933' );
+                },
+            )
+        );
+    }
 }
 add_action( 'customize_register', 'renegrade_customize_register' );
 

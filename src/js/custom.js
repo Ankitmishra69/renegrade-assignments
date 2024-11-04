@@ -32,10 +32,9 @@ import '../scss/style.scss';
                 jQuery('.testimonial__wrapper').owlCarousel({
                     loop: true,
                     margin: 12,
-                    items: 1,             // Display one item at a time
-                    dots: true,            // Show navigation dots
-                    autoplay: true,        // Enable autoplay
-
+                    items: 1,
+                    dots: true,
+                    autoplay: true,
                 });
             } else {
                 console.error("Owl Carousel library is not loaded.");

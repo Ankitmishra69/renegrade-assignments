@@ -77,7 +77,7 @@ $stylesheet_uri = get_stylesheet_directory_uri();
                         <p class="testimonial-author">-Lela Smith</p>
                     </div>
                     <div class="testimonial__img">
-                        <img src="src/img/testimonials.jpg" alt="Testimonial">
+                        <img src="<?php echo get_stylesheet_directory_uri() . "/assets/img/testimonials.jpg" ?>" alt="Testimonial">
                     </div>
                 </div>
 
@@ -88,11 +88,10 @@ $stylesheet_uri = get_stylesheet_directory_uri();
                         <p class="testimonial-author">-Lela Smith</p>
                     </div>
                     <div class="testimonial__img">
-                        <img src="src/img/testimonials.jpg" alt="Testimonial">
+                        <img src="<?php echo get_stylesheet_directory_uri() . "/assets/img/testimonials.jpg" ?>" alt="Testimonial">
                     </div>
                 </div>
             </div>
-
         </div>
         <!--        testimonials sectin starts-->
         <!--        franchise process section starts-->
