@@ -8,17 +8,20 @@
   }
 
   &__wrapper {
-    margin-top: 54px;
+    margin-top: 34px;
     @include flex-aligncenter;
     gap: 12px;
     padding: 0;
     @include tablet {
+      margin-top: 54px;
       padding: 0 13%;
     }
   }
   .section-title{
     padding: 0 5%;
+    font-size: 30px;
     @include tablet{
+      font-size: 35px;
       padding: 0 13%;
     }
   }

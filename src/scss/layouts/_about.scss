@@ -29,6 +29,7 @@
       @extend %regular;
       margin-bottom: 0;
       @include tablet {
+        line-height: 1.5;
         font-size: 30px;
       }
     }
