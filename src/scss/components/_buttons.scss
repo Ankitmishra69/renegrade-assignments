@@ -21,15 +21,7 @@
   &-primary {
     background: var(--primary-color);
     border-color: unset;
-    &:after {
-      content: '';
-      background-image: url("data:image/svg+xml,%3Csvg width='19' height='11' viewBox='0 0 19 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 9L16.5 5.5M16.5 5.5L13 2M16.5 5.5H2' stroke='white' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-      background-repeat: no-repeat;
-      height: 10px;
-      width: 20px;
-      display: inline-block;
-      margin-left: 12px;
-    }
+
     &:hover,
     &:focus {
       background: var(--secondary-color);
@@ -149,3 +141,14 @@
 
 }
 
+.btn-primary{
+  &::after {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='11' viewBox='0 0 19 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 9L16.5 5.5M16.5 5.5L13 2M16.5 5.5H2' stroke='white' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    height: 10px;
+    width: 20px;
+    display: inline-block;
+    margin-left: 12px;
+  }
+}

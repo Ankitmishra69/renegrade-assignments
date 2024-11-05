@@ -51,11 +51,19 @@
   }
 }
 
-.social-links {
-  @include flex-aligncenter;
-  gap: 14px;
-  margin: 0;
-  margin-top: 16px;
+.social {
+  &-links {
+    @include flex-aligncenter;
+    gap: 14px;
+    margin: 0;
+    margin-top: 16px;
+    .social-item{
+      img{
+        margin-top: 0;
+      }
+    }
+  }
+
 }
 
 .copyright {

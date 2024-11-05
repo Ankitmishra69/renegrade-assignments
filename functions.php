@@ -157,7 +157,7 @@ function renegrade_scripts() {
     // Enqueue navigation script
     wp_enqueue_script(
         'renegrade-navigation',
-        get_template_directory_uri() . '/js/navigation.js', // Path to the JS file
+        get_template_directory_uri() . '/assets/js/navigation.js', // Path to the JS file
         array(),
         '1.0',
         true

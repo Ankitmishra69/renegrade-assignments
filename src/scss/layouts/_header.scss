@@ -11,6 +11,10 @@ header {
   .site-branding{
     height: max-content;
     @include flex-aligncenter;
+    width: 160px;
+    @include tablet{
+      width: auto;
+    }
   }
 }
 

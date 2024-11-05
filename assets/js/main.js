@@ -105,10 +105,81 @@ __webpack_require__.r(__webpack_exports__);
             }
         }
     };
+    const hamburgerToggler = () => {
+        let DOM = {};
+
+        function activeMobileNav(e) {
+            e.preventDefault();
+            DOM.mobile_navigation.classList.toggle('mobile-nav--active');
+        }
+
+        function hideMobileNav(e) {
+            e.preventDefault();
+            DOM.mobile_navigation.classList.remove('mobile-nav--active');
+        }
+
+        function eventListeners() {
+            DOM.hamburger.addEventListener('click', activeMobileNav);
+            DOM.btn_close.addEventListener('click', hideMobileNav);
+        }
+
+        function cacheDOM() {
+            DOM.hamburger = document.querySelector('.toggle-btn');
+            DOM.btn_close = document.querySelector('.btn-close');
+            DOM.mobile_navigation = document.getElementById('mobileNav');
+        }
+
+        function init() {
+            cacheDOM();
+            eventListeners();
+        }
+
+        return {
+            init,
+        };
+    }
+
+    const subMenuToogler = () => {
+        let DOM = {};
+
+        function toggleSubMenu(e) {
+            e.preventDefault();
+            const parentMenuItem = e.currentTarget.closest('.menu-item-has-children');
+            const subMenu = parentMenuItem.querySelector('.sub-menu');
+
+            if (subMenu) {
+                subMenu.classList.toggle('sub-menu--active');
+            }
+        }
+
+        function eventListeners() {
+            DOM.items.forEach(item => {
+                item.addEventListener('click', toggleSubMenu);
+            });
+        }
+
+
+        function cacheDOM() {
+            DOM.subMenu = document.querySelector('.sub-menu');
+            DOM.items = document.querySelectorAll('.menu-item-has-children a');
+        }
+
+        function init() {
+            cacheDOM();
+            eventListeners();
+        }
+
+        return {
+            init,
+        };
+    }
+
 
     document.addEventListener("DOMContentLoaded", function() {
         franchiseProcessCards.init();
         testimonialSlider.init();
+        hamburgerToggler().init();
+        subMenuToogler().init();
     });
 
 })();

@@ -1638,18 +1638,6 @@ input[type=submit], .reply a {
   background: var(--primary-color);
   border-color: unset;
 }
-.btn-primary:after, button:after,
-input[type=button]:after,
-input[type=reset]:after,
-input[type=submit]:after, .reply a:after {
-  content: "";
-  background-image: url("data:image/svg+xml,%3Csvg width=%2719%27 height=%2711%27 viewBox=%270 0 19 11%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M13 9L16.5 5.5M16.5 5.5L13 2M16.5 5.5H2%27 stroke=%27white%27 stroke-miterlimit=%2710%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E%0A");
-  background-repeat: no-repeat;
-  height: 10px;
-  width: 20px;
-  display: inline-block;
-  margin-left: 12px;
-}
 .btn-primary:hover, button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
@@ -1775,6 +1763,19 @@ input[type=submit] {
 }
 .btn-text:hover span svg path {
   fill: var(--secondary-color);
+}
+
+.btn-primary::after, button::after,
+input[type=button]::after,
+input[type=reset]::after,
+input[type=submit]::after, .reply a::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width=%2719%27 height=%2711%27 viewBox=%270 0 19 11%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M13 9L16.5 5.5M16.5 5.5L13 2M16.5 5.5H2%27 stroke=%27white%27 stroke-miterlimit=%2710%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  height: 10px;
+  width: 20px;
+  display: inline-block;
+  margin-left: 12px;
 }
 
 .owl-dots {
@@ -2954,6 +2955,9 @@ input[type=checkbox] {
   margin: 0;
   margin-top: 16px;
 }
+.social-links .social-item img {
+  margin-top: 0;
+}
 
 .copyright {
   margin-top: 48px;
@@ -3083,6 +3087,12 @@ header {
   display: -ms-flexbox;
   display: flex;
   align-items: center;
+  width: 160px;
+}
+@media screen and (min-width: 767px), print {
+  .header .site-branding {
+    width: auto;
+  }
 }
 
 .btn-book-text {
@@ -3128,17 +3138,17 @@ header {
   gap: 40px;
 }
 
-.menu-item:hover .sub-menu {
+.desktop-navigation .menu-item:hover .sub-menu {
   display: block !important;
 }
-.menu-item a {
+.desktop-navigation .menu-item a {
   padding: 12px 24px;
   display: inline-block;
 }
-.menu-item-has-children {
+.desktop-navigation .menu-item-has-children {
   position: relative;
 }
-.menu-item-has-children:after {
+.desktop-navigation .menu-item-has-children:after {
   content: "";
   background-image: url("data:image/svg+xml,%3Csvg width=%2712%27 height=%277%27 viewBox=%270 0 12 7%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M2 2L6 6L10 2%27 stroke=%27%23232A40%27 stroke-width=%271.5%27 stroke-linecap=%27square%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E%0A");
   height: 8px;
@@ -3147,7 +3157,7 @@ header {
   background-repeat: no-repeat;
   vertical-align: middle;
 }
-.menu-item .sub-menu {
+.desktop-navigation .menu-item .sub-menu {
   display: none;
   position: absolute;
   box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.04);
@@ -3158,14 +3168,148 @@ header {
   z-index: 9999;
   background: #F5F5F5;
 }
-.menu-item .sub-menu li {
+.desktop-navigation .menu-item .sub-menu li {
   border-bottom: 1px solid #eee;
 }
-.menu-item .sub-menu li:last-child {
+.desktop-navigation .menu-item .sub-menu li:last-child {
   border-bottom: none;
 }
-.menu-item .sub-menu a {
+.desktop-navigation .menu-item .sub-menu a {
   width: 100%;
+}
+
+.mobile-nav {
+  transform: translateX(100%);
+  transition: 0.3s all ease-in-out;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  padding: 24px 0;
+  background: #fff;
+  top: 0;
+}
+.mobile-nav--active {
+  display: block;
+  width: 100%;
+  left: 0;
+  z-index: 999;
+  transform: translateX(0%);
+}
+.mobile-nav .menu-item a {
+  padding: 12px 24px;
+  display: inline-block;
+  width: 100%;
+}
+.mobile-nav .menu-item a:after {
+  display: none;
+}
+.mobile-nav .menu-item-has-children a {
+  position: relative;
+}
+.mobile-nav .menu-item-has-children a:after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg width=%2712%27 height=%277%27 viewBox=%270 0 12 7%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M2 2L6 6L10 2%27 stroke=%27%23232A40%27 stroke-width=%271.5%27 stroke-linecap=%27square%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E%0A");
+  height: 8px;
+  width: 20px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  position: absolute;
+  right: 16px;
+}
+.mobile-nav .menu-item .sub-menu {
+  width: 100%;
+  z-index: 9999;
+  display: none;
+}
+.mobile-nav .menu-item .sub-menu--active {
+  display: block;
+}
+.mobile-nav .menu-item .sub-menu li:last-child {
+  border-bottom: none;
+}
+.mobile-nav .menu-item .sub-menu a {
+  width: 100%;
+}
+.mobile-nav .menu-item .sub-menu a:after {
+  display: none;
+}
+.mobile-nav #mobile-primary-menu {
+  margin: 0;
+}
+
+.menu-toggle {
+  display: block;
+}
+@media screen and (min-width: 767px), print {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.desktop-navigation {
+  display: none;
+}
+@media screen and (min-width: 767px), print {
+  .desktop-navigation {
+    display: block;
+  }
+}
+
+button.toggle-btn {
+  background: none;
+  padding: 0;
+  display: block;
+}
+@media screen and (min-width: 767px), print {
+  button.toggle-btn {
+    display: none;
+  }
+}
+button.toggle-btn:after {
+  display: none;
+}
+button.toggle-btn .hamburger {
+  height: 2px;
+  width: 28px;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  display: block;
+}
+button.toggle-btn .hamburger:last-child {
+  margin-top: 8px;
+}
+button.toggle-btn .hamburger:first-child {
+  margin-bottom: 8px;
+}
+
+#mobile-navigation {
+  padding-top: 40px;
+}
+
+button.btn-close {
+  background: none;
+  padding: 0;
+  display: block;
+  position: fixed;
+  right: 20px;
+  padding: 12px;
+}
+button.btn-close:after {
+  display: none;
+}
+button.btn-close .hamburger {
+  height: 2px;
+  width: 28px;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  display: block;
+}
+button.btn-close .hamburger:last-child {
+  transform: rotate(-45deg);
+}
+button.btn-close .hamburger:first-child {
+  transform: rotate(45deg);
 }
 
 .about {
@@ -3526,7 +3670,7 @@ header {
 }
 @media screen and (min-width: 1024px) {
   .contact__left {
-    width: calc((100% - 60px) / 2);
+    width: calc((100% - 60px) / 2.4);
     padding: 0;
   }
 }
@@ -3543,7 +3687,7 @@ header {
 }
 @media screen and (min-width: 1024px) {
   .contact__right {
-    width: calc((100% - 60px) / 2);
+    width: calc((100% - 60px) / 1.6);
   }
 }
 .contact__right img {
