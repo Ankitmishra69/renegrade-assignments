@@ -13,9 +13,10 @@ $section_title = get_sub_field('section_title');
                 ?>
                 <div class="facts-card">
                     <h3 class="facts-title"><?php echo wp_kses_post($list_heading); ?></h3>
-                    <ul class="facts-item__wrapper">
-
-
+                    <?php
+                        $is_two_col = get_sub_field('2col');
+                    ?>
+                    <ul class="facts-item__wrapper <?php echo $is_two_col ? 'facts-item--2-col' : ''; ?>">
                         <?php
                         if (have_rows('list_repeater')):
                             while (have_rows('list_repeater')) : the_row();
@@ -23,7 +24,9 @@ $section_title = get_sub_field('section_title');
                                 $list_content = get_sub_field('list_content');
                                 ?>
                                 <li class="facts-item">
-                                    <span class="facts-item__title"><?php echo wp_kses_post($title); ?></span>
+                                    <?php if (!empty($title)): ?>
+                                        <span class="facts-item__title"><?php echo wp_kses_post($title); ?></span>
+                                    <?php endif; ?>
                                     <span class="facts-item-cost"><?php echo wp_kses_post($list_content); ?></span>
                                 </li>
                             <?php

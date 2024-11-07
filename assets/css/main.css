@@ -3398,10 +3398,13 @@ button.btn-close .hamburger:first-child {
   .facts-item--2-col {
     flex-direction: row;
     gap: 32px;
+    flex-wrap: wrap;
   }
 }
-.facts-item--2-col .facts-item {
-  width: max-content;
+@media screen and (min-width: 767px), print {
+  .facts-item--2-col .facts-item {
+    width: calc((100% - 32px) / 2);
+  }
 }
 .facts-item--2-col .facts-item-cost {
   display: block;

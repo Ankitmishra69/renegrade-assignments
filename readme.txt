@@ -33,4 +33,3 @@ renegrade includes support for WooCommerce and for Infinite Scroll in Jetpack.
 = 1.0 - May 12 2015 =
 * Initial release
 
-== C

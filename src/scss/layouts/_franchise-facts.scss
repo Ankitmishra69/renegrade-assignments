@@ -67,10 +67,13 @@
       @include tablet {
         flex-direction: row;
         gap: 32px;
+        flex-wrap: wrap;
       }
 
       .facts-item {
-        width: max-content;
+        @include tablet{
+          width: calc((100% - 32px)/2);
+        }
 
         &-cost {
           display: block;
