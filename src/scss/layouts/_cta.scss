@@ -4,6 +4,9 @@
   padding: 50px 0;
   border-bottom: 30px solid var(--secondary-color);
   @include tablet{
+    padding: 70px 0;
+  }
+  @include desktop{
     padding: 110px 0;
   }
   &__wrapper{
@@ -11,7 +14,7 @@
     justify-content: space-between;
     flex-direction: column;
     gap: 34px;
-    @include tablet{
+    @include desktop{
       gap: 120px;
       flex-direction: row;
     }
@@ -19,7 +22,7 @@
   &-button{
     width: max-content;
     margin-top: 0px;
-    @include tablet{
+    @include desktop{
       margin-top: 40px;
     }
   }
@@ -86,6 +89,7 @@
         color: var(--secondary-color);
         text-decoration: underline;
         transition: 0.3s all ease-in-out;
+        @extend %semi-bold;
         &:hover{
           text-decoration: none;
         }

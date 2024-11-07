@@ -5,8 +5,11 @@
   @extend %relative;
   @include flex-aligncenter;
   flex-direction: column;
-  height: 460px;
+  height: 380px;
   justify-content: space-between;
+  @include tablet{
+    height: 440px;
+  }
 
   &__img {
     height: 293px;
@@ -31,11 +34,14 @@
   }
 
   &-title {
-    margin-bottom: 48px;
+    margin-bottom: 18px;
     text-align: center;
     font-size: 22px;
     line-height: 1.2;
-    @extend %semi-bold
+    @extend %semi-bold;
+    @include tablet{
+      margin-bottom: 48px;
+    }
   }
 
   &-number {
@@ -51,6 +57,9 @@
     font-size: 16px;
     line-height: 1.2;
     @extend %regular;
-    margin-bottom: 48px;
+    margin-bottom: 18px;
+    @include tablet{
+      margin-bottom: 48px;
+    }
   }
 }

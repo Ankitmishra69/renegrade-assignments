@@ -163,6 +163,7 @@ button.toggle-btn {
   background: none;
   padding: 0;
   display: block;
+  margin-left: 15px;
   @include tablet {
     display: none;
   }

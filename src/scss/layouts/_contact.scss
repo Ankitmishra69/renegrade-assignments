@@ -16,6 +16,12 @@
       padding-left: 13%;
       flex-direction: row;
     }
+    @include fullhd{
+      padding-left: 8%;
+    }
+    @include fullxl{
+      padding-left: 13%;
+    }
   }
 
   &__left {
@@ -51,6 +57,9 @@
 
   button[type='submit'] {
     margin-top: 30px;
+    &:after{
+      margin-left: 48px;
+    }
   }
 
   &__desc {

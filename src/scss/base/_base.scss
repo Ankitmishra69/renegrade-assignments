@@ -28,7 +28,7 @@ a {
 }
 .container,
 .container-fluid {
-  max-width: 420px;
+  max-width: 500px;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -39,7 +39,7 @@ a {
     padding-left: 25px;
   }
   @include mobile-sm {
-    max-width: 540px;
+    max-width: 700px;
   }
   @include tablet {
     max-width: 750px;

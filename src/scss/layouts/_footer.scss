@@ -14,15 +14,18 @@
     flex-direction: column;
     @include tablet{
       flex-direction: row;
+      flex-wrap: wrap;
     }
   }
 
   &__column {
     width: 100%;
     @include tablet{
+      width: calc((100% - 40px) / 3);
+    }
+    @include desktop{
       width: calc((100% - 80px) / 5);
     }
-
     img {
       margin-top: 32px;
     }
@@ -67,7 +70,10 @@
 }
 
 .copyright {
-  margin-top: 48px;
+  margin-top: 0px;
+  @include tablet{
+    margin-top: 48px;
+  }
 
   p {
     color: #8E8E8E;

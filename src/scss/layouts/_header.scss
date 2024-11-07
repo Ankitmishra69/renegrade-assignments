@@ -6,19 +6,45 @@ header {
 .header {
   &_wrap {
     @include flex-aligncenter;
-    justify-content: space-between;
-  }
-  .site-branding{
-    height: max-content;
-    @include flex-aligncenter;
-    width: 160px;
-    @include tablet{
-      width: auto;
+    justify-content: start;
+    @include tablet {
+      justify-content: space-between;
+    }
+
+    .site-branding {
+      height: max-content;
+      @include flex-aligncenter;
+      max-width: 160px;
+      @include tablet {
+        width: auto;
+      }
+      @include desktop {
+        max-width: unset;
+      }
+    }
+
+    .nav__wrapper {
+      margin-left: auto;
     }
   }
 }
 
 .btn-book {
+  padding: 24px;
+  @include desktop {
+    padding: 12px 40px 12px 60px;
+  }
+
+  &:before {
+    @include tablet {
+      left: 28px;
+      height: 21px;
+    }
+    @include desktop{
+      left: 40px;
+    }
+  }
+
   &-text {
     display: block;
     font-size: 10px;
@@ -31,10 +57,12 @@ header {
     font-size: 14px;
     line-height: 1.2;
     @extend %regular;
+    white-space: nowrap;
   }
-  &__content{
+
+  &__content {
     display: none;
-    @include tablet{
+    @include desktop {
       display: block;
     }
   }

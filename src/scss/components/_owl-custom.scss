@@ -1,14 +1,14 @@
 
 .owl-dots{
   position: absolute;
-  bottom: 38px;
-  right: 50px;
+  bottom: 22px;
+  right: 20px;
   @include flex-aligncenter;
-  gap: 12px;
+  gap: 8px;
   z-index: 999999;
   @include tablet{
+    bottom: 38px;
     right: 100px;
-
   }
   .owl-dot{
     height: 12px;

@@ -1,7 +1,7 @@
 .hero {
   padding-top: 40px;
   background: $bg-color;
-  @include tablet{
+  @include tablet {
     padding-top: 60px;
   }
 
@@ -10,8 +10,17 @@
     flex-direction: column;
     padding-left: 5%;
     gap: 40px;
-    @include tablet{
+    @include tablet {
       flex-direction: row;
+      padding-left: 8%;
+    }
+    @include desktop {
+      padding-left: 13%;
+    }
+    @include fullhd{
+      padding-left: 8%;
+    }
+    @include fullxl{
       padding-left: 13%;
     }
   }
@@ -19,12 +28,12 @@
   &__title {
     font-size: 30px;
     line-height: 1.3;
-    @include tablet{
+    @include tablet {
       font-size: 32px;
       line-height: 1.2;
       font-weight: 800;
     }
-    @include desktop{
+    @include desktop {
       font-size: 3.75rem;
       line-height: 4.5rem;
     }
@@ -42,11 +51,11 @@
     font-size: 14px;
     margin-top: 15px;
     margin-bottom: 0;
-    @include tablet{
+    @include tablet {
       margin-top: 20px;
       font-size: 18px;
     }
-    @include desktop{
+    @include desktop {
       font-size: 20px;
     }
   }
