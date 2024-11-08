@@ -3603,7 +3603,12 @@ button.btn-close .hamburger:first-child {
 @media screen and (min-width: 767px), print {
   .contact {
     padding-top: 84px;
-    padding-bottom: 0;
+    padding-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contact {
+    pa-bottom: 0px;
   }
 }
 .contact__wrapper {

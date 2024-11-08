@@ -3,7 +3,10 @@
   padding-top: 0;
   @include tablet{
     padding-top: 84px;
-    padding-bottom: 0;
+    padding-bottom: 50px;
+  }
+  @include desktop{
+    pa-bottom: 0px;
   }
   &__wrapper {
     @include flex-aligncenter;
